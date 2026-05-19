@@ -264,6 +264,10 @@ function requerido(campo){
   }
 }
 
+/*function registrarUsuario(objetoUsuario){
+  //Aqui va una funcion que envia el objeto a una base de datos o servicio que lo requiera//
+}*/
+
 function validarFormulario() {
   
   const camposObligatorios = ["userNameInput", "contra", "confirmarContra", "telefono", "select", "direccion"];
@@ -294,10 +298,25 @@ function validarFormulario() {
     }
   });
 
-
-  if (erroresActivos > 0) {
-    alert("No se puede enviar. Tienes " + erroresActivos + " errores pendientes.");
+  const mensajeEstado = document.getElementById("error-boton");
+  
+  if (erroresActivos > 1) {
+    mensajeEstado.style.color = "red";
+    mensajeEstado.innerText = "No se puede enviar. Tienes " + (erroresActivos-1) + " errores pendientes.";
   } else {
-    alert("¡Todo perfecto! Enviando formulario...");
+    mensajeEstado.style.color = "green";
+    mensajeEstado.innerText = "¡Todo perfecto! Formulario enviado con éxito.";
+    const usuarioRegistrado = {
+      nombreUsuario: document.getElementById("userNameInput").value.trim(),
+      contrasena:    document.getElementById("contra").value.trim(),
+      telefono:      document.getElementById("telefono").value.trim(),
+      comuna:        document.getElementById("select").value,
+      direccion:     document.getElementById("direccion").value.trim(),
+      paginaWeb:     document.getElementById("webPage").value.trim(),
+      hobbies:       arrayHobbies
+    };
+    console.log("Objeto Usuario creado con éxito:", usuarioRegistrado);
+    //registrarUsuario(usuarioRegistrado);   // aqui se envia el objeto una vez este todo correcto
   }
+
 }

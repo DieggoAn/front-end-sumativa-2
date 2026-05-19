@@ -23,7 +23,7 @@
       <span id="error-contra" class="error-message" style="color: red; display: block; margin-top: 5px;"></span>
     </p>
 
-    <p class="field half">
+    <p class="field required half ">
       <label class="label" for="confirmarContra">Confirmar Contraseña</label>
       <input class="text-input" id="confirmarContra" name="confirmarContra" type="password" onblur="validarConfirmarContra(this)">
       <span id="error-confirmarContra" class="error-message" style="color: red; display: block; margin-top: 5px;"></span>
@@ -35,7 +35,7 @@
       <span id="error-telefono" class="error-message" style="color: red; display: block; margin-top: 5px;"></span>
     </p>
 
-    <p class="field half required">
+    <p class="field half">
       <label class="label" for="webPage">Pagina web</label>
       <input class="text-input" id="webPage" name="webPage" required="required" type="webPage" onblur="validarURL(this)">
       <span id="error-url" class="error-message" style="color: red; display: block; margin-top: 5px;"></span>
@@ -82,6 +82,8 @@
     <button type="button" id="submitBtn" class="button" style="margin-top: 10px; width: 100%;" onclick="validarFormulario()">
       Enviar formulario
     </button>
+    <span id="error-boton" class="error-message" style="color: red; display: block; margin-top: 5px;"></span>
+
   </form>
   <script src="js/script.js"></script>
   </body>
