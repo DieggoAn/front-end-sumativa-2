@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Moderno</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <form action="" class="form" id="formulario">
+    <p class="field required">
+      <label class="label required" for="userName">Nombre de Usuario</label>
+      <input class="text-input" id="userNameInput" name="userName" required="required" type="text" onblur="validarUserName(this)">
+      <span id="error-userName" class="error-message" style="color: red; display: block; margin-top: 5px;"></span>
+    </p>
+
+    <p class="field required half">
+      <label class="label" for="contra">Contraseña</label>
+      <input class="text-input" id="contra" name="contra" type="password" onblur="validarContra(this)">
+      <span id="error-contra" class="error-message" style="color: red; display: block; margin-top: 5px;"></span>
+    </p>
+
+    <p class="field half">
+      <label class="label" for="confirmarContra">Confirmar Contraseña</label>
+      <input class="text-input" id="confirmarContra" name="confirmarContra" type="password" onblur="validarConfirmarContra(this)">
+      <span id="error-confirmarContra" class="error-message" style="color: red; display: block; margin-top: 5px;"></span>
+    </p>
+
+    <p class="field half required">
+      <label class="label" for="telefono">Numero de telefono</label>
+      <input class="text-input" id="telefono" name="telefono" required="required" type="text" onblur="validarTelefono(this)">
+      <span id="error-telefono" class="error-message" style="color: red; display: block; margin-top: 5px;"></span>
+    </p>
+
+    <p class="field half required">
+      <label class="label" for="webPage">Pagina web</label>
+      <input class="text-input" id="webPage" name="webPage" required="required" type="webPage" onblur="validarURL(this)">
+      <span id="error-url" class="error-message" style="color: red; display: block; margin-top: 5px;"></span>
+    </p>
+
+    <p class="field half required">
+        <label class="label">Comuna</label>
+        <select id="select" class="select">
+          <option value="" selected disabled hidden>Selecciona una opción</option>
+          <option value="valdivia">Valdivia</option>
+          <option value="paillaco">Paillaco</option>
+          <option value="los-lagos">Los Lagos</option>
+          <option value="corral">Corral</option>
+          <option value="otra">Otra comuna</option>
+        </select>
+        <span id="error-select" class="error-message" style="color: red; display: block; margin-top: 5px;"></span>
+    </p>
+    <p class="field half required">
+      <label class="label" for="direccion">Direccion</label>
+      <input class="text-input" id="direccion" name="direccion" required="required" type="direccion" onblur="requerido(this)">
+      <span id="error-direccion" class="error-message" style="color: red; display: block; margin-top: 5px;"></span>
+    </p>
+
+    <div class="field items-container">
+      
+      <div class="input-side">
+        <p class="field"> <label class="label">Agregar Hobby</label>
+          <input type="text" id="itemInput" class="text-input" placeholder="Escribe algo...">
+          <button type="button" id="addItemBtn" class="button" style="margin-top: 10px; width: 100%;" onclick="agregar()">
+            Agregar a la lista
+          </button>
+        </p>
+      </div>
+
+      <div class="list-side">
+        <label class="label">Hobbies Agregados</label>
+        <ul id="dynamicList" class="result-list">
+          </ul>
+        <span id="error-hobby" class="error-message" style="color: red; display: block; margin-top: 5px;"></span>
+      </div>
+
+    </div>
+
+    <button type="button" id="submitBtn" class="button" style="margin-top: 10px; width: 100%;" onclick="validarFormulario()">
+      Enviar formulario
+    </button>
+  </form>
+  <script src="js/script.js"></script>
+  </body>
+</html>
